@@ -205,6 +205,6 @@
 
 @media (max-width: 600px) {
     .story-intro p {
-        letter-spacing: 0.18em;
+        line-height: 1.7;
     }
 }
