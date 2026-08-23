@@ -56,6 +56,6 @@ supportButton.className = "support-benny";
 supportButton.target = "_blank";
 supportButton.rel = "noopener noreferrer";
 supportButton.innerHTML = `
-    <img src="static/img/gofundme_logo.png" alt="Support Benny">
+    <img src="static/img/gofundme_logo_no_BG.png" alt="Support Benny">
 `;
 document.body.prepend(supportButton);

@@ -37,7 +37,7 @@
 }
 
 .story-photo {
-    width: min(70vw, 600px);
+    width: min(90vw, 600px);
     height: auto;
 
     will-change: transform;
