@@ -1,0 +1,52 @@
+.story-intro {
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 30px;
+}
+
+.story-intro h1,
+.story-intro p {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+
+    margin: 0;
+}
+
+.story-scene {
+    position: relative;
+
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 5px;
+
+    padding: 2rem 8vw;
+
+    margin-top: -45vh;
+
+    overflow: hidden;
+}
+
+.story-photo {
+    width: min(70vw, 600px);
+    height: auto;
+
+    will-change: transform;
+}
+
+.story-text {
+    width: min(80vw, 600px);
+
+    text-align: center;
+
+    will-change: transform;
+}

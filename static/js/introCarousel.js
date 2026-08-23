@@ -43,3 +43,19 @@ dots.forEach(function (dot, index) {
         });     
 
     });
+
+    const enterButton = document.querySelector('.enter-button');
+    enterButton.addEventListener('click', function(event) {
+        event.preventDefault();
+
+        document.body.classList.add('page-exit');
+
+        setTimeout(function() {
+            window.location.href = 'story.html';
+        }, 600)
+    
+    });
+
+    window.addEventListener('pageshow', function () {
+    document.body.classList.remove('page-exit');
+});

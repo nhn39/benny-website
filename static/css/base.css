@@ -36,13 +36,21 @@
 }
 
 body {
+    color: white;
     margin: 0;
     padding: 0;
+
+    opacity: 1;
+    transition: opacity 0.6s ease;
 
     width: 100%;
     height: 100%;
 
     background: black;
+}
+
+body.page-exit {
+    opacity: 0;
 }
 
 .carousel-button {
@@ -116,4 +124,50 @@ body {
 
         transform: none;
     }
+}
+
+.enter-button {
+    position: absolute;
+
+    top: 60%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    z-index: 20;
+
+    color: white;
+    text-decoration: none;
+
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    letter-spacing: 0.3em;
+
+    cursor: pointer;
+
+    opacity: 0.8;
+
+    transition: opacity 0.3s ease,
+                letter-spacing 0.3s ease;
+}
+
+.enter-button:hover {
+    opacity: 1;
+    letter-spacing: 0.45em;
+}
+
+.benny-logo {
+    position: fixed;
+    top: clamp(5px, 3vw, 30px);
+    left: clamp(5px, 3vw, 30px);
+
+    z-index: 9999;
+}
+
+.benny-logo img {
+    width: clamp(79px, 8vw, 140px);
+    height: auto;
+     filter:
+        drop-shadow(0 0 2px rgba(255, 255, 255, 1))
+        drop-shadow(0 0 5px rgba(255, 255, 255, 0.8))
+        drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
 }
