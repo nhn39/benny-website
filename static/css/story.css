@@ -202,3 +202,9 @@
         filter: none;
     }
 }
+
+@media (max-width: 600px) {
+    .story-intro p {
+        letter-spacing: 0.18em;
+    }
+}
