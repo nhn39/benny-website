@@ -13,10 +13,10 @@ function updateStoryAnimation() {
     progress = Math.max(0, Math.min(1, progress));
 
     // Photo starts far to the left
-    const photoX = -window.innerWidth * 3 * (1 - progress);
+    const photoX = -window.innerWidth * 0.8 * (1 - progress);
 
     // Text starts far to the right
-    const textX = window.innerWidth * 3 * (1 - progress);
+    const textX = window.innerWidth * 0.8 * (1 - progress);
 
     photo.style.transform = `translateX(${photoX}px)`;
 
