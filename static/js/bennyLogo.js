@@ -42,7 +42,7 @@ logo.addEventListener("click", function (event) {
 
     setTimeout(function () {
         window.location.href = "index.html";
-    }, 600);
+    }, 400);
 });
 
 // -------------------------

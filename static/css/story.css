@@ -31,13 +31,13 @@
 
     padding: 2rem 8vw;
 
-    margin-top: -45vh;
+    margin-top: -40vh;
 
     overflow: hidden;
 }
 
 .story-photo {
-    width: clamp(280px, 55vw, 900px);
+    width: clamp(300px, 65vw, 900px);
     height: auto;
 
     max-height: 75vh;
@@ -52,4 +52,6 @@
     text-align: center;
 
     will-change: transform;
+
+    font-size: clamp(1.72rem, 2vw, 3.24rem);
 }

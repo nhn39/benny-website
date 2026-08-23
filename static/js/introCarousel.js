@@ -1,15 +1,15 @@
 console.log("carousel JS loaded");
-const videos = document.querySelectorAll('.intro-video');
-const dots = document.querySelectorAll('.dot');
+const videos = document.querySelectorAll(".intro-video");
+const dots = document.querySelectorAll(".dot");
 
-const preButton = document.querySelector('.prev');
-const nextButton = document.querySelector('.next');
+const preButton = document.querySelector(".prev");
+const nextButton = document.querySelector(".next");
 
 let currentSlide = 0;
 
 function showSlide(index) {
-    videos[currentSlide].classList.remove('active');
-    dots[currentSlide].classList.remove('active');
+    videos[currentSlide].classList.remove("active");
+    dots[currentSlide].classList.remove("active");
 
     currentSlide = index;
 
@@ -21,41 +21,38 @@ function showSlide(index) {
         currentSlide = videos.length - 1;
     }
 
-    videos[currentSlide].classList.add('active');
-    dots[currentSlide].classList.add('active');
+    videos[currentSlide].classList.add("active");
+    dots[currentSlide].classList.add("active");
 
     videos[currentSlide].currentTime = 0;
     videos[currentSlide].play();
 }
 
-
-nextButton.addEventListener('click', function ()  {
+nextButton.addEventListener("click", function () {
     showSlide(currentSlide + 1);
 });
 
-preButton.addEventListener('click', function () {
-        showSlide(currentSlide - 1);
-    });  
+preButton.addEventListener("click", function () {
+    showSlide(currentSlide - 1);
+});
 
 dots.forEach(function (dot, index) {
-        dot.addEventListener('click', function () {
-            showSlide(index);
-        });     
-
+    dot.addEventListener("click", function () {
+        showSlide(index);
     });
+});
 
-    const enterButton = document.querySelector('.enter-button');
-    enterButton.addEventListener('click', function(event) {
-        event.preventDefault();
+const enterButton = document.querySelector(".enter-button");
+enterButton.addEventListener("click", function (event) {
+    event.preventDefault();
 
-        document.body.classList.add('page-exit');
+    document.body.classList.add("page-exit");
 
-        setTimeout(function() {
-            window.location.href = 'story.html';
-        }, 600)
-    
-    });
+    setTimeout(function () {
+        window.location.href = "story.html";
+    }, 400);
+});
 
-    window.addEventListener('pageshow', function () {
-    document.body.classList.remove('page-exit');
+window.addEventListener("pageshow", function () {
+    document.body.classList.remove("page-exit");
 });
