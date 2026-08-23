@@ -23,7 +23,6 @@
 
     display: flex;
     flex-direction: column;
-
     justify-content: center;
     align-items: center;
 
@@ -31,7 +30,7 @@
 
     padding: 2rem 8vw;
 
-    margin-top: -40vh;
+    margin: 0;
 
     overflow: hidden;
 }
@@ -54,4 +53,65 @@
     will-change: transform;
 
     font-size: clamp(1.72rem, 2vw, 3.24rem);
+}
+
+.story-video {
+    width: clamp(280px, 70vw, 1000px);
+    max-height: 75vh;
+
+    object-fit: contain;
+
+    display: block;
+}
+.video-scene {
+    position: relative;
+
+    margin: 0;
+    padding: 0;
+}
+
+.video-sticky {
+    position: sticky;
+    top: 0;
+
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: clamp(8px, 2vw, 24px);
+
+    overflow: hidden;
+}
+
+.story-video {
+    width: clamp(280px, 70vw, 1000px);
+    max-height: 70vh;
+
+    object-fit: contain;
+    display: block;
+}
+
+.video-text {
+    width: min(85vw, 700px);
+
+    text-align: center;
+
+    font-size: clamp(1.2rem, 2vw, 2rem);
+}
+
+.story-intro + .story-scene {
+    margin-top: -40vh;
+}
+
+.story-scene + .story-scene {
+    margin-top: -45vh;
+}
+
+/* Last photo → video */
+.story-scene + .video-scene {
+    margin-top: -50vh;
+    h;
 }
