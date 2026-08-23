@@ -1,0 +1,107 @@
+.intro-carousel {
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+
+    overflow: hidden;
+}
+
+.intro-video {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    object-fit: cover;
+    object-position: center;
+
+    opacity: 0;
+
+    transition: opacity 1.5s ease;
+}
+
+.intro-video.active {
+    opacity: 1;
+}
+
+.video-1 {
+    width: 250%;
+
+    object-fit: contain;
+    object-position: left center;
+
+    transform: translateX(-30%);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: black;
+}
+
+.carousel-button {
+    position: absolute;
+
+    top: 50%;
+    transform: translateY(-50%);
+
+    z-index: 10;
+
+    background: rgba(0, 0, 0, 0.3);
+    border: none;
+
+    color: white;
+    font-size: 3rem;
+
+    cursor: pointer;
+
+    padding:
+        clamp(8px, 1.5vw, 18px)
+        clamp(12px, 2vw, 24px);
+}
+
+.prev {
+    left: clamp(10px, 3vw, 40px);
+}
+
+.next {
+    right: clamp(10px, 3vw, 40px);
+}
+
+.carousel-dots {
+    position: absolute;
+
+    bottom: 30px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+    gap: 10px;
+
+    z-index: 10;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+
+    padding: 0;
+
+    border: 1px solid white;
+    border-radius: 50%;
+
+    background: transparent;
+
+    cursor: pointer;
+}
+
+.dot.active {
+    background: white;
+}
