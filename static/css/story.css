@@ -37,8 +37,11 @@
 }
 
 .story-photo {
-    width: min(90vw, 600px);
+    width: clamp(280px, 55vw, 900px);
     height: auto;
+
+    max-height: 75vh;
+    object-fit: contain;
 
     will-change: transform;
 }
