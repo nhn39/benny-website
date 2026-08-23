@@ -114,3 +114,91 @@
 .story-scene + .video-scene {
     margin-top: -40vh;
 }
+
+/* =========================
+   Benny intro animation
+   ========================= */
+
+/* =========================
+   Benny intro animation
+   ========================= */
+
+.story-intro {
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 30px;
+
+    overflow: hidden;
+}
+
+/* Keep the original vertical layout */
+.story-intro h1,
+.story-intro p {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+
+    margin: 0;
+}
+
+/* Benny */
+.story-intro h1 {
+    opacity: 0;
+
+    transform: translateY(25px) scale(0.92);
+    filter: blur(6px);
+
+    animation: bennyReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Story subtitle */
+.story-intro p {
+    opacity: 0;
+
+    transform: translateY(20px);
+    filter: blur(5px);
+
+    animation: bennySubtitle 0.9s ease-out 0.45s forwards;
+}
+
+@keyframes bennyReveal {
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(0.92);
+        filter: blur(6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+    }
+}
+
+@keyframes bennySubtitle {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+        filter: blur(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .story-intro h1,
+    .story-intro p {
+        animation: none;
+        opacity: 1;
+        transform: none;
+        filter: none;
+    }
+}
