@@ -113,5 +113,4 @@
 /* Last photo → video */
 .story-scene + .video-scene {
     margin-top: -50vh;
-    h;
 }
