@@ -1,46 +1,51 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="static/css/base.css">  
-        
-        
-    <title>Benny the 🐈</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="static/css/base.css" />
+
+        <title>Benny the 🐈</title>
     </head>
+
     <body>
-        
-      
-<div class="intro-carousel">
-        <video class ="intro-video video-1 active" autoplay loop muted playsinline>
-            <source src="static/videos/benn_website_intro_3.mp4" type="video/mp4">
-        </video>
+        <div class="intro-carousel">
+            <!-- SLIDE 1: COUNTER -->
+            <iframe
+                class="intro-video counter-frame active"
+                src="counter.html"
+                title="Benny — Every Second Counts"
+            ></iframe>
 
-        
-        <video class="intro-video" autoplay loop muted playsinline>
-            <source src="static/videos/Benny_chicken_reframe.mp4" type="video/mp4">
-        </video>
+            <!-- SLIDE 2 -->
+            <video class="intro-video video-1" loop muted playsinline>
+                <source src="static/videos/benn_website_intro_3.mp4" type="video/mp4" />
+            </video>
 
-        <video class="intro-video" autoplay loop muted playsinline>
-            <source src="static/videos/benny_sunbath.mp4" type="video/mp4">
-        </video>
-        <a href="story.html" class="enter-button">ENTER</a>
-        
+            <!-- SLIDE 3 -->
+            <video class="intro-video" loop muted playsinline>
+                <source src="static/videos/Benny_chicken_reframe.mp4" type="video/mp4" />
+            </video>
 
-        <button class="carousel-button prev" >&#10094;</button>
-        <button class="carousel-button next" >&#10095;</button>
+            <!-- SLIDE 4 -->
+            <video class="intro-video" loop playsinline>
+                <source src="static/videos/benny_sunbath_1.mp4" type="video/mp4" />
+            </video>
 
-        <div class="carousel-dots">
-            <button class = "dot active" data-slide="0"></button>
-            <button class = "dot" data-slide="1"></button>  
-            <button class = "dot" data-slide="2"></button>
+            <a href="story.html" class="enter-button">ENTER</a>
+
+            <button class="carousel-button prev">&#10094;</button>
+            <button class="carousel-button next">&#10095;</button>
+
+            <div class="carousel-dots">
+                <button class="dot active" data-slide="0"></button>
+                <button class="dot" data-slide="1"></button>
+                <button class="dot" data-slide="2"></button>
+                <button class="dot" data-slide="3"></button>
+            </div>
         </div>
 
-
-          </div>
-
-        <script src="static/js/introCarousel.js" ></script>
-        <script src="static/js/bennyLogo.js"> 
-            </script>
+        <script src="static/js/introCarousel.js"></script>
+        <script src="static/js/bennyLogo.js"></script>
     </body>
 </html>

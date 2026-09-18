@@ -8,6 +8,12 @@ const nextButton = document.querySelector(".next");
 let currentSlide = 0;
 
 function showSlide(index) {
+    // Stop current slide if it is a video
+    if (videos[currentSlide].tagName === "VIDEO") {
+        videos[currentSlide].pause();
+        videos[currentSlide].currentTime = 0;
+    }
+
     videos[currentSlide].classList.remove("active");
     dots[currentSlide].classList.remove("active");
 
@@ -24,8 +30,11 @@ function showSlide(index) {
     videos[currentSlide].classList.add("active");
     dots[currentSlide].classList.add("active");
 
-    videos[currentSlide].currentTime = 0;
-    videos[currentSlide].play();
+    // Play new slide if it is a video
+    if (videos[currentSlide].tagName === "VIDEO") {
+        videos[currentSlide].currentTime = 0;
+        videos[currentSlide].play();
+    }
 }
 
 nextButton.addEventListener("click", function () {

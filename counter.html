@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link rel="stylesheet" href="static/css/counter.css" />
+
+        <title>Benny — Every Second Counts</title>
+    </head>
+
+    <body>
+        <main class="counter-page">
+            <!-- BENNY PHOTO -->
+            <div class="benny-photo"></div>
+
+            <!-- dark transition from photo into counter -->
+            <div class="photo-fade"></div>
+
+            <!-- COUNTER CONTENT -->
+            <section class="counter-content">
+                <header class="counter-header">
+                    <h1>BENNY</h1>
+                    <p>EVERY SECOND COUNTS.</p>
+                </header>
+
+                <!-- AGE -->
+                <section class="age-section">
+                    <h2>Benny Age Counter</h2>
+
+                    <div class="flip-clock age-clock">
+                        <div class="time-unit">
+                            <div class="flip-card" id="age-years">00</div>
+                            <span>YEARS</span>
+                        </div>
+
+                        <div class="time-unit">
+                            <div class="flip-card" id="age-months">00</div>
+                            <span>MONTHS</span>
+                        </div>
+
+                        <div class="time-unit">
+                            <div class="flip-card" id="age-days">00</div>
+                            <span>DAYS</span>
+                        </div>
+
+                        <div class="time-unit">
+                            <div class="flip-card" id="age-hours">00</div>
+                            <span>HOURS</span>
+                        </div>
+
+                        <div class="time-unit">
+                            <div class="flip-card" id="age-minutes">00</div>
+                            <span>MINUTES</span>
+                        </div>
+
+                        <div class="time-unit">
+                            <div class="flip-card" id="age-seconds">00</div>
+                            <span>SECONDS</span>
+                        </div>
+                    </div>
+
+                    <p class="birth-note">Born April 2016 · Exact date unknown</p>
+                </section>
+
+                <!-- PAW DIVIDER -->
+                <div class="divider">
+                    <span></span>
+                    <div>🐾</div>
+                    <span></span>
+                </div>
+
+                <!-- PROGNOSIS -->
+                <section class="prognosis-section">
+                    <p class="prognosis-copy">
+                        VET PROGNOSIS (SEP 8, 2026) 1–2 MONTHS OF LIFE LEFT
+                    </p>
+
+                    <!-- <p class="months-left">1–2 MONTHS LEFT.</p> -->
+
+                    <!-- ESTIMATED WINDOW -->
+                    <!-- ESTIMATED WINDOW -->
+                    <div class="estimate-window">
+                        <button class="estimate-date estimate-option" data-months="1" type="button">
+                            <span>1 MONTH</span>
+                            <strong>OCT 8, 2026</strong>
+                        </button>
+
+                        <div class="timeline">
+                            <div class="timeline-progress" id="window-progress"></div>
+
+                            <div class="timeline-marker" id="window-marker"></div>
+                        </div>
+
+                        <button
+                            class="estimate-date estimate-option active"
+                            data-months="2"
+                            type="button"
+                        >
+                            <span>2 MONTHS</span>
+                            <strong>NOV 8, 2026</strong>
+                        </button>
+                    </div>
+                    <h2 id="prognosis-title">ESTIMATED TIME REMAINING</h2>
+
+                    <!-- PROGNOSIS CLOCK -->
+                    <div class="flip-clock prognosis-clock">
+                        <div class="time-unit">
+                            <div class="flip-card" id="prog-days">00</div>
+                            <span>DAYS</span>
+                        </div>
+
+                        <div class="time-unit">
+                            <div class="flip-card" id="prog-hours">00</div>
+                            <span>HOURS</span>
+                        </div>
+
+                        <div class="time-unit">
+                            <div class="flip-card" id="prog-minutes">00</div>
+                            <span>MINUTES</span>
+                        </div>
+
+                        <div class="time-unit">
+                            <div class="flip-card" id="prog-seconds">00</div>
+                            <span>SECONDS</span>
+                        </div>
+                    </div>
+
+                    <p id="prognosis-status">ESTIMATED WINDOW: OCTOBER 8 – NOVEMBER 8, 2026</p>
+                </section>
+            </section>
+        </main>
+
+        <script src="static/js/bennyCounter.js"></script>
+    </body>
+</html>

@@ -1,0 +1,563 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    background: #050403;
+    color: #f5f2ec;
+    font-family: Georgia, "Times New Roman", serif;
+    overflow: hidden;
+}
+
+/* =========================================
+   PAGE
+========================================= */
+
+.counter-page {
+    position: relative;
+
+    width: 100vw;
+    height: 100vh;
+
+    overflow: hidden;
+
+    background: #050403;
+}
+
+/* =========================================
+   BENNY PHOTO
+========================================= */
+
+.benny-photo {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    position: absolute;
+    inset: 0;
+
+    width: 70%;
+    height: 70%;
+
+    background-image: url("../img/IMG_2151.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    z-index: 0;
+}
+
+/* gradient makes photo disappear into black */
+
+.photo-fade {
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        transparent 27%,
+        rgba(5, 4, 3, 0.15) 38%,
+        rgba(5, 4, 3, 0.75) 59%,
+        #050403 68%,
+        #050403 100%
+    );
+
+    z-index: 1;
+
+    pointer-events: none;
+}
+
+/* =========================================
+   RIGHT CONTENT
+========================================= */
+
+.counter-content {
+    position: absolute;
+
+    top: 50%;
+    right: 4%;
+
+    transform: translateY(-50%);
+
+    width: 58%;
+    max-width: 850px;
+
+    text-align: center;
+
+    z-index: 2;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.counter-header h1 {
+    margin: 0;
+
+    font-size: clamp(2.5rem, 5vw, 5.2rem);
+    font-weight: 400;
+
+    letter-spacing: 0.25em;
+    padding-left: 0.25em;
+
+    line-height: 1;
+}
+
+.counter-header p {
+    margin: 12px 0 25px;
+
+    font-size: clamp(0.55rem, 0.8vw, 0.85rem);
+
+    letter-spacing: 0.65em;
+    padding-left: 0.65em;
+}
+
+/* =========================================
+   SECTION TITLES
+========================================= */
+
+.age-section h2,
+.prognosis-section h2 {
+    margin: 0 0 12px;
+
+    font-size: clamp(0.65rem, 1vw, 1rem);
+
+    font-weight: 400;
+
+    letter-spacing: 0.38em;
+}
+
+/* =========================================
+   CLOCK
+========================================= */
+
+.flip-clock {
+    display: flex;
+
+    justify-content: center;
+    align-items: flex-start;
+
+    gap: clamp(6px, 1.2vw, 17px);
+
+    width: 100%;
+}
+
+.time-unit {
+    width: clamp(55px, 7vw, 92px);
+
+    text-align: center;
+}
+
+/* physical clock card */
+
+.flip-card {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    aspect-ratio: 0.92 / 1;
+
+    overflow: hidden;
+
+    border-radius: 5px;
+
+    color: #080808;
+
+    background: linear-gradient(
+        to bottom,
+        #fafaf7 0%,
+        #eeeeea 48%,
+        #c8c8c4 49.5%,
+        #fafaf7 51%,
+        #e7e7e2 100%
+    );
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: clamp(1.9rem, 4vw, 4rem);
+
+    font-weight: 700;
+
+    line-height: 1;
+
+    box-shadow:
+        0 8px 14px rgba(0, 0, 0, 0.55),
+        inset 0 1px 1px rgba(255, 255, 255, 1);
+
+    transform-origin: center;
+}
+
+/* horizontal mechanical split */
+
+.flip-card::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    top: 50%;
+
+    height: 2px;
+
+    background: rgba(0, 0, 0, 0.65);
+
+    box-shadow: 0 1px rgba(255, 255, 255, 0.5);
+
+    z-index: 3;
+}
+
+/* side hinges */
+
+.flip-card::before {
+    content: "";
+
+    position: absolute;
+
+    left: 2px;
+    right: 2px;
+
+    top: calc(50% - 6px);
+
+    height: 12px;
+
+    border-left: 5px solid #555;
+    border-right: 5px solid #555;
+
+    z-index: 4;
+}
+
+.time-unit > span {
+    display: block;
+
+    margin-top: 8px;
+
+    font-size: clamp(0.35rem, 0.5vw, 0.55rem);
+
+    letter-spacing: 0.22em;
+
+    opacity: 0.9;
+}
+
+/* =========================================
+   FLIP ANIMATION
+========================================= */
+
+.flip-card.flip {
+    animation: flip-number 0.42s ease;
+}
+
+@keyframes flip-number {
+    0% {
+        transform: rotateX(0deg);
+    }
+
+    45% {
+        transform: rotateX(-75deg);
+    }
+
+    65% {
+        transform: rotateX(15deg);
+    }
+
+    82% {
+        transform: rotateX(-5deg);
+    }
+
+    100% {
+        transform: rotateX(0deg);
+    }
+}
+
+/* =========================================
+   BIRTH NOTE
+========================================= */
+
+.birth-note {
+    margin: 11px 0 0;
+
+    font-size: clamp(0.55rem, 0.75vw, 0.8rem);
+
+    font-style: italic;
+
+    letter-spacing: 0.07em;
+
+    opacity: 0.7;
+}
+
+/* =========================================
+   DIVIDER
+========================================= */
+
+.divider {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    width: 80%;
+
+    margin: 20px auto;
+}
+
+.divider span {
+    height: 1px;
+
+    background: rgba(255, 255, 255, 0.45);
+
+    flex: 1;
+}
+
+.divider div {
+    font-size: 0.9rem;
+
+    opacity: 0.65;
+}
+
+/* =========================================
+   PROGNOSIS
+========================================= */
+
+.prognosis-copy {
+    margin: 0;
+
+    font-size: clamp(0.7rem, 1vw, 1rem);
+}
+
+.months-left {
+    margin: 7px 0 18px;
+
+    font-size: clamp(0.9rem, 1.4vw, 1.4rem);
+
+    letter-spacing: 0.18em;
+}
+
+/* =========================================
+   ESTIMATE TIMELINE
+========================================= */
+
+.estimate-window {
+    display: grid;
+
+    grid-template-columns:
+        minmax(70px, 110px)
+        minmax(120px, 1fr)
+        minmax(70px, 110px);
+
+    align-items: center;
+
+    gap: 14px;
+
+    width: 90%;
+
+    margin: 0 auto 18px;
+}
+
+.estimate-date {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+    font-size: clamp(0.4rem, 0.55vw, 0.55rem);
+
+    letter-spacing: 0.2em;
+}
+
+.estimate-date strong {
+    font-weight: 400;
+}
+
+.timeline {
+    position: relative;
+
+    height: 2px;
+
+    background: rgba(255, 255, 255, 0.35);
+}
+
+.timeline-progress {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 0%;
+    height: 100%;
+
+    background: white;
+}
+
+.timeline-marker {
+    position: absolute;
+
+    top: 50%;
+    left: 0%;
+
+    width: 12px;
+    height: 12px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    transform: translate(-50%, -50%);
+}
+
+/* =========================================
+   PROGNOSIS CLOCK
+========================================= */
+
+.prognosis-clock {
+    width: 70%;
+
+    margin: auto;
+}
+
+.prognosis-clock .time-unit {
+    width: clamp(55px, 6.5vw, 85px);
+}
+
+.prognosis-clock .flip-card {
+    font-size: clamp(1.8rem, 3.5vw, 3.5rem);
+}
+
+#prognosis-status {
+    margin: 15px 0 0;
+
+    font-size: clamp(0.38rem, 0.55vw, 0.55rem);
+
+    letter-spacing: 0.25em;
+
+    opacity: 0.55;
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+    body {
+        overflow-y: auto;
+    }
+
+    .counter-page {
+        min-height: 100vh;
+        height: auto;
+    }
+
+    .benny-photo {
+        width: 100%;
+        height: 50vh;
+
+        background-position: center;
+    }
+
+    .photo-fade {
+        background: linear-gradient(
+            to bottom,
+            transparent 0%,
+            rgba(5, 4, 3, 0.15) 25%,
+            #050403 42%,
+            #050403 100%
+        );
+    }
+
+    .counter-content {
+        position: relative;
+
+        top: auto;
+        right: auto;
+
+        transform: none;
+
+        width: 94%;
+
+        margin: 25vh auto 0;
+
+        padding-bottom: 60px;
+    }
+
+    .flip-clock {
+        gap: 5px;
+    }
+
+    .time-unit {
+        flex: 1;
+
+        min-width: 0;
+    }
+
+    .flip-card {
+        font-size: clamp(1.3rem, 7vw, 2.2rem);
+    }
+
+    .time-unit > span {
+        font-size: 0.3rem;
+        letter-spacing: 0.08em;
+    }
+
+    .estimate-window {
+        width: 100%;
+
+        grid-template-columns: 70px 1fr 70px;
+
+        gap: 8px;
+    }
+
+    .prognosis-clock {
+        width: 80%;
+    }
+}
+
+.estimate-option {
+    appearance: none;
+
+    padding: 0;
+
+    border: none;
+    background: transparent;
+
+    color: rgba(255, 255, 255, 0.55);
+
+    font-family: inherit;
+
+    cursor: pointer;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.estimate-option:hover {
+    color: white;
+}
+
+.estimate-option.active {
+    color: white;
+}
+
+.estimate-option.active strong {
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+
+.estimate-option:hover {
+    transform: scale(1.05);
+}
