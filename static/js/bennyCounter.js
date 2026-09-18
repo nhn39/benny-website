@@ -170,7 +170,7 @@ function updatePrognosisClock() {
         duration = getDuration(targetDate - now);
 
         if (title) {
-            title.textContent = "ESTIMATED TIME REMAINING";
+            title.textContent = "BENNY’S ESTIMATED TIME REMAINING";
         }
 
         if (status) {
