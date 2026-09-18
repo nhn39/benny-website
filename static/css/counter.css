@@ -305,14 +305,12 @@ body {
 
 .divider {
     display: flex;
-
     align-items: center;
-
     gap: 14px;
 
     width: 80%;
 
-    margin: 20px auto;
+    margin: clamp(28px, 4vh, 55px) auto;
 }
 
 .divider span {
